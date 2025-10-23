@@ -1,0 +1,13 @@
+# Core framework
+fastapi==0.115.2
+uvicorn==0.30.6
+
+# Google Gemini API client
+google-generativeai==0.7.2
+
+# Environment variables
+python-dotenv==1.0.1
+
+# (Optional) Parsing & utilities
+pydantic==2.9.2
+
