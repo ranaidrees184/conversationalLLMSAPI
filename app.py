@@ -3,6 +3,7 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from dotenv import load_dotenv
 import google.generativeai as genai
+from fastapi.middleware.cors import CORSMiddleware
 import os
 
 # Load env vars
@@ -111,4 +112,5 @@ async def chat(request: ChatRequest):
 @app.get("/")
 def root():
     return {"message": "MedAI Progressive Chatbot API is running!"}
+
 
