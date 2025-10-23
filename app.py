@@ -13,6 +13,14 @@ genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 # Initialize app
 app = FastAPI(title="MedAI Progressive Chatbot")
+# ✅ Allow all origins (or restrict later)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # or ["http://127.0.0.1:5500"] for stricter
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Request model
 class ChatRequest(BaseModel):
@@ -103,3 +111,4 @@ async def chat(request: ChatRequest):
 @app.get("/")
 def root():
     return {"message": "MedAI Progressive Chatbot API is running!"}
+
